@@ -14,4 +14,4 @@ class Compania:
             total_paquetes += 1
             dinero = self.precio * paquete.peso
             total_dinero += dinero
-        return f"Reporte de la compañía {self.nombre}:\nTotal de paquetes transportados: {total_paquetes}\nTotal recaudado: {total_dinero}$"
+        return f"Reporte de la compañía {self.nombre}:\nTotal de paquetes transportados: {total_paquetes}\nTotal recaudado: ${total_dinero}"
