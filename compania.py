@@ -1,17 +1,17 @@
 class Compania:
-    def __init__(self, nombre, precio):
+
+    def __init__(self, nombre):
         self.nombre = nombre
-        self.precio = precio
         self.paquetes = []
 
-    def transportar(self, paquete):
+    def agregar_paquete(self, paquete):
         self.paquetes.append(paquete)
 
-    def reporte(self):
-        total_paquetes = 0
-        total_dinero = 0
+    def generar_reporte(self, fecha):
+        contador = 0
+        total = 0
         for paquete in self.paquetes:
-            total_paquetes += 1
-            dinero = self.precio * paquete.peso
-            total_dinero += dinero
-        return f"Reporte de la compañía {self.nombre}:\nTotal de paquetes transportados: {total_paquetes}\nTotal recaudado: ${total_dinero}"
+            if paquete.fecha == fecha:
+                contador += 1
+                total += paquete.precio
+        return f"Reporte de la Compania {self.nombre} para el día {fecha}:\nTotal de paquetes transportados: {contador}\nTotal recaudado: {total}$"
